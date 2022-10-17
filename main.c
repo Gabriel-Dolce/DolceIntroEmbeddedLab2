@@ -1,23 +1,27 @@
-//lab 2 question 1
+//lab 2 question 2
 #include <msp430.h> 
 
-float B = 100;
+
 /**
  * main.c
  */
+int add(int a, int b);
+
 void main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
-	int a = 0;
-	unsigned int c = 0xFFFF;
-	unsigned int d = 0x0000;
-	int result1;
-	int result2;
+	int a = 0b1000111100001111;
+	int b = 0b1111000011110000;
+	int c = 0;
 
-	a++;
-	B-=1;
-	result1 = c != d;
-	result2 = d > c;
+	c = add(a,b);
+
+	
 
 	while(1);
 }
+	int add(int a, int b)
+	    {
+	        return a + b;
+	    }
+
